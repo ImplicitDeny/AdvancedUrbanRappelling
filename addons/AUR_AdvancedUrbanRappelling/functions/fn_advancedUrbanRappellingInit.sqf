@@ -12,6 +12,8 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 if (!isServer) exitWith {};
 
+systemChat "GRSI modified version running";
+
 AUR_Advanced_Urban_Rappelling_Install = {
 
 // Prevent advanced urban rappelling from installing twice

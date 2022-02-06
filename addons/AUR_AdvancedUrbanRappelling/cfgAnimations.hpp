@@ -283,7 +283,7 @@ class CfgMovesMaleSdr: CfgMovesBasic
 			actions="AUR_01_Actions";
 			leftHandIKCurve[]={1};
 			minPlayTime = 0.1;								
-			file="\AUR_AdvancedUrbanRappelling\anims\Rup_RopeFX_01_aim.rtm";	/// what file is going to be played in this state
+			file="fr\gsri\aur\anims\Rup_RopeFX_01_aim.rtm";	/// what file is going to be played in this state
 			speed=100000;											
 			ConnectTo[]={};											
 			InterpolateTo[]=										
@@ -319,7 +319,7 @@ class CfgMovesMaleSdr: CfgMovesBasic
 			variantsPlayer[]={};
 			headBobStrength=0;
 			soundEnabled=1;
-			file="\AUR_AdvancedUrbanRappelling\anims\Rup_RopeFX_01_aim1.rtm";
+			file="fr\gsri\aur\anims\Rup_RopeFX_01_aim1.rtm";
 			speed=-8;												
 			ConnectTo[]=
 			{
@@ -330,7 +330,7 @@ class CfgMovesMaleSdr: CfgMovesBasic
 		class AUR_01_Idle: cargo_base_idle
 		{
 			actions="AUR_01_IdleActions";
-			file="\AUR_AdvancedUrbanRappelling\anims\Rup_RopeFX_01_idle.rtm";
+			file="fr\gsri\aur\anims\Rup_RopeFX_01_idle.rtm";
 			speed=100000;
 			minPlayTime = 0.1;
 			aiming="aimingDefault";
@@ -368,7 +368,7 @@ class CfgMovesMaleSdr: CfgMovesBasic
 			variantsPlayer[]={};
 			headBobStrength=0;
 			soundEnabled=1;
-			file="\AUR_AdvancedUrbanRappelling\anims\Rup_RopeFX_01_idle1.rtm";
+			file="fr\gsri\aur\anims\Rup_RopeFX_01_idle1.rtm";
 			speed=-10;
 			ConnectTo[]=
 			{
@@ -379,7 +379,7 @@ class CfgMovesMaleSdr: CfgMovesBasic
 		class AUR_01_Aim_Pistol: cargo_basepistol
 		{
 			actions="AUR_01_PistolActions";
-			file="\AUR_AdvancedUrbanRappelling\anims\Rup_RopeFX_01_aimpistol.rtm";
+			file="fr\gsri\aur\anims\Rup_RopeFX_01_aimpistol.rtm";
 			aiming="aimingRifleSlingDefault";
 			aimingBody="aimingUpRifleSlingDefault";
 			speed=100000;
@@ -417,7 +417,7 @@ class CfgMovesMaleSdr: CfgMovesBasic
 			variantsPlayer[]={};
 			headBobStrength=0;
 			soundEnabled=1;
-			file="\AUR_AdvancedUrbanRappelling\anims\Rup_RopeFX_01_aimpistol1.rtm";
+			file="fr\gsri\aur\anims\Rup_RopeFX_01_aimpistol1.rtm";
 			speed=-8;
 			ConnectTo[]=
 			{
@@ -428,7 +428,7 @@ class CfgMovesMaleSdr: CfgMovesBasic
 		class AUR_01_Idle_Pistol: cargo_base_idle_pistol
 		{
 			actions="AUR_01_IdlePistolActions";
-			file="\AUR_AdvancedUrbanRappelling\anims\Rup_RopeFX_01_idlepistol.rtm";
+			file="fr\gsri\aur\anims\Rup_RopeFX_01_idlepistol.rtm";
 			speed=100000;
 			aiming="aimingRifleSlingDefault";
 			aimingBody="aimingUpRifleSlingDefault";
@@ -465,7 +465,7 @@ class CfgMovesMaleSdr: CfgMovesBasic
 			variantsPlayer[]={};
 			headBobStrength=0;
 			soundEnabled=1;
-			file="\AUR_AdvancedUrbanRappelling\anims\Rup_RopeFX_01_idlepistol1.rtm";
+			file="fr\gsri\aur\anims\Rup_RopeFX_01_idlepistol1.rtm";
 			speed=-10;
 			ConnectTo[]=
 			{
@@ -476,7 +476,7 @@ class CfgMovesMaleSdr: CfgMovesBasic
 		class AUR_01_Aim_ToPistol: AmovPpneMstpSrasWrflDnon_AmovPpneMstpSrasWpstDnon
 		{
 			actions="AUR_01_PistolActions";
-			file="\AUR_AdvancedUrbanRappelling\anims\Rup_RopeFX_01_aimtopistol.rtm";
+			file="fr\gsri\aur\anims\Rup_RopeFX_01_aimtopistol.rtm";
 			speed=2;
 			ConnectTo[]=
 			{
@@ -488,7 +488,7 @@ class CfgMovesMaleSdr: CfgMovesBasic
 		class AUR_01_Aim_ToPistol_End: AmovPpneMstpSrasWrflDnon_AmovPpneMstpSrasWpstDnon_end
 		{
 			actions="AUR_01_PistolActions";
-			file="\AUR_AdvancedUrbanRappelling\anims\Rup_RopeFX_01_aimtopistol_end.rtm";
+			file="fr\gsri\aur\anims\Rup_RopeFX_01_aimtopistol_end.rtm";
 			speed=1.875;
 			ConnectTo[]=
 			{
@@ -500,7 +500,7 @@ class CfgMovesMaleSdr: CfgMovesBasic
 		class AUR_01_Aim_FromPistol: AmovPpneMstpSrasWpstDnon_AmovPpneMstpSrasWrflDnon
 		{
 			actions="AUR_01_PistolActions";
-			file="\AUR_AdvancedUrbanRappelling\anims\Rup_RopeFX_01_aimFrompistol.rtm";
+			file="fr\gsri\aur\anims\Rup_RopeFX_01_aimFrompistol.rtm";
 			speed=2.3076921;
 			ConnectTo[]=
 			{
@@ -512,7 +512,7 @@ class CfgMovesMaleSdr: CfgMovesBasic
 		class AUR_01_Aim_FromPistol_End: AmovPpneMstpSrasWpstDnon_AmovPpneMstpSrasWrflDnon_end
 		{
 			actions="AUR_01_Actions";
-			file="\AUR_AdvancedUrbanRappelling\anims\Rup_RopeFX_01_aimfrompistol_end.rtm";
+			file="fr\gsri\aur\anims\Rup_RopeFX_01_aimfrompistol_end.rtm";
 			aiming="aimingDefault";
 			aimingBody="aimingUpDefault";
 			speed=2;
@@ -527,7 +527,7 @@ class CfgMovesMaleSdr: CfgMovesBasic
 		class AUR_01_Die: DefaultDie
 		{
 			actions="AUR_01_DeadActions";
-			file="\AUR_AdvancedUrbanRappelling\anims\Rup_RopeFX_01_die.rtm";
+			file="fr\gsri\aur\anims\Rup_RopeFX_01_die.rtm";
 			speed=1;
 			looped="false";
 			terminal=1;
@@ -541,7 +541,7 @@ class CfgMovesMaleSdr: CfgMovesBasic
 		};
 		class AUR_01_Die_Pistol: AUR_01_Die
 		{
-			file="\AUR_AdvancedUrbanRappelling\anims\Rup_RopeFX_01_die.rtm";
+			file="fr\gsri\aur\anims\Rup_RopeFX_01_die.rtm";
 			actions="AUR_01_DeadActions";
 			showHandGun=1;
 		};
@@ -615,7 +615,7 @@ class CfgGesturesMale
 	{
 		class AUR_01_Jump1: Default
 		{
-			file="\AUR_AdvancedUrbanRappelling\anims\Rup_RopeFX_01_Jump1.rtm";
+			file="fr\gsri\aur\anims\Rup_RopeFX_01_Jump1.rtm";
 			minPlayTime= 1;
 			looped = 0;
 			speed = 0.2;
@@ -634,12 +634,12 @@ class CfgGesturesMale
 		};
 		class AUR_01_Jump2: AUR_01_Jump1
 		{
-			file="\AUR_AdvancedUrbanRappelling\anims\Rup_RopeFX_01_Jump2.rtm";
+			file="fr\gsri\aur\anims\Rup_RopeFX_01_Jump2.rtm";
 			speed = 0.00000001;
 		};
 		class AUR_01_Jump3: AUR_01_Jump1
 		{
-			file="\AUR_AdvancedUrbanRappelling\anims\Rup_RopeFX_01_Jump3.rtm";
+			file="fr\gsri\aur\anims\Rup_RopeFX_01_Jump3.rtm";
 			speed = 0.85;
 		};
 	};
