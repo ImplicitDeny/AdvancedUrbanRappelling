@@ -37,25 +37,6 @@ diag_log "Advanced Urban Rappelling Loading...";
 	Number or Array (see above)
 */
 
-AUR_Rappel_Unit = {
-	params ["_unit",["_ropeLength",0],["_rappelPoint",[]],["_rappelDirection",[]]];
-	if(count _rappelPoint == 0) then {
-		_findRappelPointResult = [_unit,"POSITION"] call GSRI_fnc_aurFindNearbyRappelPoint;	
-		if(count _findRappelPointResult > 0) then {
-			_rappelPoint = _findRappelPointResult select 0;
-			_rappelDirection = _findRappelPointResult select 1;
-		};
-	};
-	if(count _rappelPoint > 0) then {
-		if(_ropeLength <= 0) then {
-			_ropeLength = ([_unit] call GSRI_fnc_aurGetPlayerHeightAboveGround) * 1.3;
-		};
-		[_unit, _rappelPoint, _rappelDirection, _ropeLength] spawn AUR_Rappel;
-	} else {
-		hint "Could not rappel unit - move unit closer to edge!";
-	};
-};
-
 AUR_Rappel = {
 	params ["_player","_rappelPoint","_rappelDirection","_ropeLength"];
 
