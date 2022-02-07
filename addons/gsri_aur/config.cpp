@@ -11,34 +11,24 @@ class CfgPatches
 	};
 };
 
-class CfgNetworkMessages
-{
-	
-	class AdvancedUrbanRappellingRemoteExecClient
-	{
-		module = "AdvancedUrbanRappelling";
-		parameters[] = {"ARRAY","STRING","OBJECT","BOOL"};
-	};
-	
-	class AdvancedUrbanRappellingRemoteExecServer
-	{
-		module = "AdvancedUrbanRappelling";
-		parameters[] = {"ARRAY","STRING","BOOL"};
-	};
-	
-};
-
-class CfgFunctions 
-{
-	class SA
-	{
-		class AdvancedUrbanRappelling
-		{
+class CfgFunctions {
+	class GSRI {
+		class AUR {
 			file = "fr\gsri\aur\functions";
-			class advancedUrbanRappellingInit
-			{
-				postInit=1;
-			};
+			class advancedUrbanRappellingInit {	postInit=1 };
+			class aurPlaySound3D {};
+			class aurPlayRappellingSound {};
+			class aurPlayRappellingSoundGlobal {};
+			class aurHasAddonAnimsInstalled {};
+			class aurHasAddonSoundsInstalled {};
+			class aurFindNearbyRappelPoint {};
+			class aurGetPlayerHeightAboveGround {};
+			class aurCheckRappelAction {};
+			class aurCheckDetachAction {};
+			class aurCheckClimbToTop {};
+			class aurRappelAction {};
+			class aurDetachAction {};
+			class aurClimbToTopAction {};
 		};
 	};
 };

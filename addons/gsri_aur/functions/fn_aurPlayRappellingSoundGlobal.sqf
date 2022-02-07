@@ -1,0 +1,1 @@
+_this remoteExec ["GSRI_fnc_aurPlayRappellingSound", 0];
