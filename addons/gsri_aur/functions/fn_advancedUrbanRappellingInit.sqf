@@ -94,12 +94,14 @@ AUR_Rappel = {
 			if(_this select 1 in (actionKeys "MoveBack")) then {
 				_ropeLength = player getVariable ["AUR_Rappel_Rope_Length",100];
 				_topRope = player getVariable ["AUR_Rappel_Rope_Top",nil];
-				if(!isNil "_topRope") then {
-					ropeUnwind [ _topRope, 1.5, ((ropeLength _topRope) + 0.1) min _ropeLength];
-				};
 				_bottomRope = player getVariable ["AUR_Rappel_Rope_Bottom",nil];
-				if(!isNil "_bottomRope") then {
-					ropeUnwind [ _bottomRope, 1.5, ((ropeLength _bottomRope) - 0.1) max 0];
+				if(ropeLength _bottomRope > 1) then {
+					if(!isNil "_topRope") then {
+						ropeUnwind [ _topRope, 1.5, ((ropeLength _topRope) + 0.1) min _ropeLength];
+					};
+					if(!isNil "_bottomRope") then {
+						ropeUnwind [ _bottomRope, 1.5, ((ropeLength _bottomRope) - 0.1) max 0];
+					};
 				};
 			};
 			if(_this select 1 in (actionKeys "MoveForward")) then {
@@ -253,7 +255,7 @@ AUR_Rappel = {
 		_lastPosition = _newPosition;
 		
 		//if((getPos _player) select 2 < 1 || !alive _player || vehicle _player != _player || ropeLength _rope2 <= 1 || _player getVariable ["AUR_Climb_To_Top",false] || _player getVariable ["AUR_Detach_Rope",false] ) exitWith {};
-		if(!alive _player || vehicle _player != _player || ropeLength _rope2 <= 1 || _player getVariable ["AUR_Climb_To_Top",false] || _player getVariable ["AUR_Detach_Rope",false] ) exitWith {};
+		if(!alive _player || vehicle _player != _player || _player getVariable ["AUR_Climb_To_Top",false] || _player getVariable ["AUR_Detach_Rope",false] ) exitWith {};
 		
 		sleep 0.01;
 	};
