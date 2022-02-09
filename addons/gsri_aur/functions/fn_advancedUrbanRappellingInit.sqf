@@ -52,14 +52,14 @@ AUR_Rappel = {
 	hideObject _anchor;
 	_anchor enableSimulation false;
 	_anchor allowDamage false;
-	[_anchor] remoteExec ["AUR_Hide_Object_Global", 2];
+	[_anchor] remoteExec ["hideObjectGlobal", 2];
 
 	// Create rappel device (attached to player)
 	_rappelDevice = createVehicle ["B_static_AA_F", _player, [], 0, "CAN_COLLIDE"];
 	hideObject _rappelDevice;
 	_rappelDevice setPosWorld _playerStartPosition;
 	_rappelDevice allowDamage false;
-	[_rappelDevice] remoteExec ["AUR_Hide_Object_Global", 2];
+	[_rappelDevice] remoteExec ["hideObjectGlobal", 2];
 	
 	[_player,_rappelDevice,_anchor] remoteExec ["GSRI_fnc_aurplayRappellingSoundGlobal", 2];
 	
@@ -407,13 +407,6 @@ AUR_Enable_Rappelling_Animation = {
 	_player switchMove "";	
 	_player enableSimulation true;
 	
-};
-
-AUR_Hide_Object_Global = {
-	params ["_obj"];
-	if( _obj isKindOf "Land_Can_V2_F" || _obj isKindOf "B_static_AA_F" ) then {
-		hideObjectGlobal _obj;
-	};
 };
 
 AUR_Add_Player_Actions = {
