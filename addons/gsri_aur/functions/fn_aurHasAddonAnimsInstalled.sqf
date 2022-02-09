@@ -1,1 +1,0 @@
-(count getText ( configFile / "CfgMovesBasic" / "ManActions" / "AUR_01" )) > 0;
