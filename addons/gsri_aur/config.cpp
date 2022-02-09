@@ -19,7 +19,6 @@ class CfgFunctions {
 			class aurPlaySound3D {};
 			class aurPlayRappellingSound {};
 			class aurPlayRappellingSoundGlobal {};
-			class aurHasAddonSoundsInstalled {};
 			class aurFindNearbyRappelPoint {};
 			class aurGetPlayerHeightAboveGround {};
 			class aurCheckRappelAction {};

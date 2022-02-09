@@ -1,5 +1,5 @@
 params ["_player","_rappelDevice","_rappelAncor"];
-if(!hasInterface || !(call GSRI_fnc_aurHasAddonSoundsInstalled) ) exitWith {};
+if(!hasInterface) exitWith {};
 if(player distance _player < 15) then {
 	[_player, "AUR_Rappel_Start"] call GSRI_fnc_aurPlaySound3D;
 	[_rappelDevice, "AUR_Rappel_Loop"] call GSRI_fnc_aurPlaySound3D;
