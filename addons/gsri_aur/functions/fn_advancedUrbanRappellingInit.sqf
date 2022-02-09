@@ -258,36 +258,10 @@ AUR_Rappel = {
 		sleep 0.01;
 	};
 
+	/*
 	if(ropeLength _rope2 > 1 && alive _player && vehicle _player == _player && not (_player getVariable ["AUR_Climb_To_Top",false])) then {
-	
-		_playerStartASLIntersect = getPosASL _player;
-		_playerEndASLIntersect = [_playerStartASLIntersect select 0, _playerStartASLIntersect select 1, (_playerStartASLIntersect select 2) - 5];
-		_surfaces = lineIntersectsSurfaces [_playerStartASLIntersect, _playerEndASLIntersect, _player, objNull, true, 10];
-		_intersectionASL = [];
-		{
-			scopeName "surfaceLoop";
-			_intersectionObject = _x select 2;
-			_objectFileName = str _intersectionObject;
-			if((_objectFileName find " t_") == -1 && (_objectFileName find " b_") == -1) then {
-				_intersectionASL = _x select 0;
-				breakOut "surfaceLoop";
-			};
-		} forEach _surfaces;
-		
-		if(count _intersectionASL != 0) then {
-			_player allowDamage false;
-			_player setPosASL _intersectionASL;
-		};		
-
-		if(_player getVariable ["AUR_Detach_Rope",false]) then {
-			// Player detached from rope. Don't prevent damage 
-			// if we didn't find a position on the ground
-			if(count _intersectionASL == 0) then {
-				_player allowDamage true;
-			};	
-		};
-		
-	};
+		// Here was cheating code to prevent players from being dumb. Not our style. Removed.		
+	};*/
 	
 	if(_player getVariable ["AUR_Climb_To_Top",false]) then {
 		_player allowDamage false;
