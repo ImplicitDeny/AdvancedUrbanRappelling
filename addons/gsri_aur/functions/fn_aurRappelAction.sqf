@@ -7,8 +7,8 @@ if([_player] call GSRI_fnc_aurCheckRappelAction) then {
 		_ropeLength = _player getVariable ["GSRI_AUR_ropeLength", 30];
 		[_player, _rappelPoint select 0, _rappelPoint select 1,_ropeLength] call AUR_Rappel;
 	} else {
-		[["Couldn't attach rope. Move closer to edge!", false],"AUR_Hint",_player] call AUR_RemoteExec;
+		"Couldn't attach rope. Move closer to edge!" remoteExec ["hint", _player];
 	};
 } else {
-	[["Couldn't attach rope. Move closer to edge!", false],"AUR_Hint",_player] call AUR_RemoteExec;
+	"Couldn't attach rope. Move closer to edge!" remoteExec ["hint", _player];
 };

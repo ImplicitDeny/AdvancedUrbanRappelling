@@ -29,6 +29,7 @@ class CfgFunctions {
 			class aurRappelAction {};
 			class aurDetachAction {};
 			class aurClimbToTopAction {};
+			class aurGetCurrentWeaponType {};
 		};
 	};
 };

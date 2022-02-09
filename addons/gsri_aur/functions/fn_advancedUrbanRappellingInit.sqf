@@ -151,8 +151,6 @@ AUR_Rappel = {
 	
 	_walkingOnWallForce = [0,0,0];
 	
-	_lastAiJumpTime = diag_tickTime;
-	
 	while {true} do {
 	
 		_currentTime = diag_tickTime;
@@ -324,14 +322,6 @@ AUR_Enable_Rappelling_Animation_Global = {
 	[_player,true] remoteExec ["AUR_Enable_Rappelling_Animation", 0];
 };
 
-AUR_Current_Weapon_Type_Selected = {
-	params ["_player"];
-	if(currentWeapon _player == handgunWeapon _player) exitWith {"HANDGUN"};
-	if(currentWeapon _player == primaryWeapon _player) exitWith {"PRIMARY"};
-	if(currentWeapon _player == secondaryWeapon _player) exitWith {"SECONDARY"};
-	"OTHER";
-};
-
 AUR_Enable_Rappelling_Animation = {
 	params ["_player",["_globalExec",false]];
 	
@@ -346,7 +336,7 @@ AUR_Enable_Rappelling_Animation = {
 	};
 	
 	if(call GSRI_fnc_aurHasAddonAnimsInstalled) then {		
-		if([_player] call AUR_Current_Weapon_Type_Selected == "HANDGUN") then {
+		if([_player] call GSRI_fnc_aurGetCurrentWeaponType == "HANDGUN") then {
 			if(local _player) then {
 				_player switchMove "AUR_01_Idle_Pistol";
 				_player setVariable ["AUR_Animation_Move","AUR_01_Idle_Pistol_No_Actions",true];
@@ -386,7 +376,7 @@ AUR_Enable_Rappelling_Animation = {
 			params ["_player","_animation"];
 			if(call GSRI_fnc_aurHasAddonAnimsInstalled) then {
 				if((toLower _animation) find "aur_" < 0) then {
-					if([_player] call AUR_Current_Weapon_Type_Selected == "HANDGUN") then {
+					if([_player] call GSRI_fnc_aurGetCurrentWeaponType == "HANDGUN") then {
 						_player switchMove "AUR_01_Aim_Pistol";
 						_player setVariable ["AUR_Animation_Move","AUR_01_Aim_Pistol_No_Actions",true];
 					} else {
@@ -447,19 +437,6 @@ AUR_Enable_Rappelling_Animation = {
 	
 };
 
-AUR_Hint = {
-    params ["_msg",["_isSuccess",true]];
-    if(!isNil "ExileClient_gui_notification_event_addNotification") then {
-		if(_isSuccess) then {
-			["Success", [_msg]] call ExileClient_gui_notification_event_addNotification; 
-		} else {
-			["Whoops", [_msg]] call ExileClient_gui_notification_event_addNotification; 
-		};
-    } else {
-        hint _msg;
-    };
-};
-
 AUR_Hide_Object_Global = {
 	params ["_obj"];
 	if( _obj isKindOf "Land_Can_V2_F" || _obj isKindOf "B_static_AA_F" ) then {
@@ -504,14 +481,10 @@ if(!isDedicated) then {
 
 AUR_RemoteExec = {
 	params ["_params","_functionName","_target",["_isCall",false]];
-	if(!isNil "ExileClient_system_network_send") then {
-		["AdvancedUrbanRappellingRemoteExecClient",[_params,_functionName,_target,_isCall]] call ExileClient_system_network_send;
+	if(_isCall) then {
+		_params remoteExecCall [_functionName, _target];
 	} else {
-		if(_isCall) then {
-			_params remoteExecCall [_functionName, _target];
-		} else {
-			_params remoteExec [_functionName, _target];
-		};
+		_params remoteExec [_functionName, _target];
 	};
 };
 
