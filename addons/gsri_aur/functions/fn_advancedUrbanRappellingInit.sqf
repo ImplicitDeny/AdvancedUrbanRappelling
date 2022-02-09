@@ -10,8 +10,6 @@ The above copyright notice and this permission notice shall be included in all c
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
 
-if (!isServer) exitWith {};
-
 systemChat "GRSI modified version running";
 
 AUR_Advanced_Urban_Rappelling_Install = {
@@ -457,9 +455,5 @@ diag_log "Advanced Urban Rappelling Loaded";
 
 };
 
-publicVariable "AUR_Advanced_Urban_Rappelling_Install";
 
 [] call AUR_Advanced_Urban_Rappelling_Install;
-// Install Advanced Urban Rappelling on all clients (plus JIP) //
-remoteExecCall ["AUR_Advanced_Urban_Rappelling_Install", -2,true];
-
