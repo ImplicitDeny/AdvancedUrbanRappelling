@@ -54,16 +54,16 @@ AUR_Rappel = {
 	hideObject _anchor;
 	_anchor enableSimulation false;
 	_anchor allowDamage false;
-	[[_anchor],"AUR_Hide_Object_Global"] call AUR_RemoteExecServer;
+	[_anchor] remoteExec ["AUR_Hide_Object_Global", 2];
 
 	// Create rappel device (attached to player)
 	_rappelDevice = createVehicle ["B_static_AA_F", _player, [], 0, "CAN_COLLIDE"];
 	hideObject _rappelDevice;
 	_rappelDevice setPosWorld _playerStartPosition;
 	_rappelDevice allowDamage false;
-	[[_rappelDevice],"AUR_Hide_Object_Global"] call AUR_RemoteExecServer;
+	[_rappelDevice] remoteExec ["AUR_Hide_Object_Global", 2];
 	
-	[[_player,_rappelDevice,_anchor],"GSRI_fnc_aurplayRappellingSoundGlobal"] call AUR_RemoteExecServer;
+	[_player,_rappelDevice,_anchor] remoteExec ["GSRI_fnc_aurplayRappellingSoundGlobal", 2];
 	
 	_rope2 = ropeCreate [_rappelDevice, [-0.15,0,0], _ropeLength - 1];
 	_rope2 allowDamage false;
@@ -302,7 +302,7 @@ AUR_Enable_Rappelling_Animation = {
 	if(local _player && _globalExec) exitWith {};
 	
 	if(local _player && !_globalExec) then {
-		[[_player],"AUR_Enable_Rappelling_Animation_Global"] call AUR_RemoteExecServer;
+		[_player] remoteExec ["AUR_Enable_Rappelling_Animation_Global", 2];
 	};
 
 	if(_player != player) then {
@@ -449,28 +449,6 @@ if(!isDedicated) then {
 				};
 			};
 			sleep 5;
-		};
-	};
-};
-
-AUR_RemoteExec = {
-	params ["_params","_functionName","_target",["_isCall",false]];
-	if(_isCall) then {
-		_params remoteExecCall [_functionName, _target];
-	} else {
-		_params remoteExec [_functionName, _target];
-	};
-};
-
-AUR_RemoteExecServer = {
-	params ["_params","_functionName",["_isCall",false]];
-	if(!isNil "ExileClient_system_network_send") then {
-		["AdvancedUrbanRappellingRemoteExecServer",[_params,_functionName,_isCall]] call ExileClient_system_network_send;
-	} else {
-		if(_isCall) then {
-			_params remoteExecCall [_functionName, 2];
-		} else {
-			_params remoteExec [_functionName, 2];
 		};
 	};
 };
