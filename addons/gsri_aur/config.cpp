@@ -24,10 +24,13 @@ class CfgFunctions {
 			class aurCheckRappelAction {};
 			class aurCheckDetachAction {};
 			class aurCheckClimbToTop {};
+			class aurRappel {};
 			class aurRappelAction {};
 			class aurDetachAction {};
 			class aurClimbToTopAction {};
 			class aurGetCurrentWeaponType {};
+			class aurEnableAnimationsGlobal {};
+			class aurEnableAnimations {};
 		};
 	};
 };
